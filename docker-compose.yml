@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000"
+    env_file:
+      - ./user-service/.env.local
+    environment:
+      - PORT=3000
+      - NODE_OPTIONS=--dns-result-order=ipv4first
+    restart: unless-stopped
+
+  siswa-service:
+    build:
+      context: ./siswa-service
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3000"
+    env_file:
+      - ./siswa-service/.env.local
+    environment:
+      - PORT=3000
+      - NODE_OPTIONS=--dns-result-order=ipv4first
+    restart: unless-stopped
