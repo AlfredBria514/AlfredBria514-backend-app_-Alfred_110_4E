@@ -13,10 +13,17 @@ To run this project locally, you can use Docker Compose.
 
 ```bash
 docker-compose up -d --build
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
 This will start both services and the associated databases.
-
+Open http://localhost:3001 and  http://localhost:3003 with your browser to see the result.
 ## Learn More
 
 *   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
